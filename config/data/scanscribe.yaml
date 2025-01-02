@@ -1,0 +1,4 @@
+dataset_name: ScanScribe
+source: .data/datasets/scanscribe
+metadata: metadata.json
+dataset_type: visual_grounding

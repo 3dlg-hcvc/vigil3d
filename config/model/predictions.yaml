@@ -1,0 +1,83 @@
+eval:
+  data:
+    split:
+      test: test
+    dataset:
+      _target_: ovfgvg.data.dataset.Predictions
+      cached_predictions_path: ${predictions}
+    dataloader:
+      test:
+        num_workers: 0
+        batch_size: 1
+        shuffle: False
+        pin_memory: True
+        drop_last: False
+        collate_fn: Predictions
+        sampler: null
+  module:
+    _target_: ovfgvg.modules.EvaluationModule
+    metrics:
+      metrics:
+        - _target_: ovfgvg.metrics.BoxAccuracyAtIoU
+          iou: 0.25
+          plottable: False
+        - _target_: ovfgvg.metrics.BoxAccuracyAtIoU
+          iou: 0.50
+          plottable: False
+        - _target_: ovfgvg.metrics.BoxAccuracyAtIoU
+          iou: 0.95
+          plottable: False
+        - _target_: ovfgvg.metrics.F1ScoreAtIoU
+          iou: 0.25
+          plottable: False
+        - _target_: ovfgvg.metrics.F1ScoreAtIoU
+          iou: 0.50
+          plottable: False
+        - _target_: ovfgvg.metrics.F1ScoreAtIoU
+          iou: 0.95
+          plottable: False
+      compute_groups:
+        - [AccuracyAtIoU25]
+        - [AccuracyAtIoU50]
+        - [AccuracyAtIoU95]
+        - [F1ScoreAtIoU25]
+        - [F1ScoreAtIoU50]
+        - [F1ScoreAtIoU95]
+      together: False
+  trainer:
+    accelerator: "auto"
+    callbacks:
+      - _target_: ovfgvg.callbacks.MetricsCallback
+        log_dir: ${env.save_dir}/${model.eval.data.split.test}
+      - _target_: ovfgvg.callbacks.SubgroupAnalysisCallback
+        log_dir: ${env.save_dir}/${model.eval.data.split.test}/subgroup_analysis
+        stat_test_name: two_proportion_z_test
+        stat_metric: test/acc@iou95
+        latex_columns:
+          - [num_attribute_type_number, 1]
+          - [num_attribute_type_text_label, 1]
+          - [num_attribute_type_state, 1]
+          - [num_relationship_type_far, 1]
+          - [num_relationship_type_arrangement, 1]
+          - [num_relationship_type_ordinal, 1]
+          - [num_relationship_type_comparison, 1]
+          - [granularity, generic]
+          - [granularity, categorical]
+          - [granularity, fine-grained]
+          - [num_target_not_first_np, 1]
+          - [num_anchor_type_single, 1]
+          - [num_anchor_type_multiple, 1]
+          - [num_anchor_type_non_object, 1]
+          - [num_anchor_type_viewpoint, 1]
+          - [num_negation, 1]
+        latex_metric: ${model.latex_metric}
+      - _target_: ovfgvg.callbacks.ReWeightedAccuracyCallback
+        log_dir: ${env.save_dir}/${model.eval.data.split.test}/reweighted_accuracy
+        metric: test/acc@iou95
+        mode: stochastic
+        num_samples: 1000000
+        analysis_file: .data/datasets/scanscribe/train/analysis.json
+    logger: ${env.logger}
+  load_from_checkpoint: False
+
+latex_metric: test/acc@iou95

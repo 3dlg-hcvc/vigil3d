@@ -1,0 +1,71 @@
+dataset_name: ARKitScenes
+source: .data/datasets/arkitscenes.h5
+dataset_type: object_detection
+preprocess:
+  raw_data_root: /datasets/external/arkitscenes/raw
+  splits:
+    - train
+    - val
+  skip_existing: True
+  num_workers: 8
+labels:
+  - cabinet
+  - build_in_cabinet
+  - refrigerator
+  - shelf
+  - stove
+  - bed
+  - sink
+  - washer
+  - toilet
+  - bathtub
+  - oven
+  - dishwasher
+  - fireplace
+  - stool
+  - chair
+  - table
+  - tv_monitor
+  - sofa
+  - stairs
+text_input:
+  - cabinet
+  - built-in cabinet
+  - refrigerator
+  - shelf
+  - stove
+  - bed
+  - sink
+  - washer
+  - toilet
+  - bathtub
+  - oven
+  - dishwasher
+  - fireplace
+  - stool
+  - chair
+  - table
+  - tv monitor
+  - sofa
+  - stairs
+color_map:
+  1: [174., 199., 232.]  # cabinet
+  2: [214., 39., 40.]  # build_in_cabinet
+  3: [186., 197., 62.]  # refrigerator
+  4: [152., 223., 138.]  # shelf
+  5: [196., 156., 148.]  # stove
+  6: [197., 176., 213.]  # bed
+  7: [188., 189., 34.]  # sink
+  8: [141., 91., 229.]  # washer
+  9: [237.0, 204.0, 37.0]  # toilet
+  10: [31., 119., 180.]  # bathtub
+  11: [219., 219., 141.]  # oven
+  12: [255., 152., 150.]  # dishwasher
+  13: [150.0, 53.0, 56.0]  # fireplace
+  14: [162.0, 62.0, 60.0]  # stool
+  15: [62.0, 143.0, 148.0]  # chair
+  16: [112., 128., 144.]  # table
+  17: [229.0, 91.0, 104.0]  # tv_monitor
+  18: [140., 86., 75.]  # sofa
+  19: [255., 187., 120.]  # stairs
+  0: [0., 0., 0.]  # unlabeled

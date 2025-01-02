@@ -1,0 +1,4 @@
+dataset_name: Multi3DRefer
+source: .data/datasets/multi3drefer
+metadata: metadata.json
+dataset_type: visual_grounding

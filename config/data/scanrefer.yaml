@@ -1,0 +1,55 @@
+dataset_name: ScanRefer
+source: .data/datasets/scanrefer/
+metadata: metadata.json
+dataset_type: visual_grounding
+preprocess:
+  raw_data_root:
+    - /datasets/released/scannet/public/v2/scans
+    - /datasets/released/scannet/public/v1/scans
+  raw_annotations: /localhome/atw7/projects/3d-ovfgvg/data/scanrefer
+  splits:
+    - train
+    - val
+  skip_existing: False
+  num_workers: 8
+  image_size: [320, 240]  # width x height
+  frame_skip: 20
+  text:
+    model:
+      model_name: CLIP
+      model_params:
+        model_type: ViT-L/14@336px
+    module:
+      name: TextEncoderModule
+    data_module:
+      dataset_name: CLIP
+      prompt: null
+      delimiter: null
+      batch_size: 1
+      num_workers: 4
+    trainer:
+      devices: [0]
+color_map:
+  0: [0., 0., 0.]  # other
+  1: [74., 199., 132.]  # target
+labels: 
+  - 'wall'
+  - 'floor'
+  - 'cabinet'
+  - 'bed'
+  - 'chair'
+  - 'sofa'
+  - 'table'
+  - 'door'
+  - 'window'
+  - 'bookshelf'
+  - 'picture'
+  - 'counter'
+  - 'desk'
+  - 'curtain'
+  - 'refrigerator'
+  - 'shower curtain'
+  - 'toilet'
+  - 'sink'
+  - 'bathtub'
+  - 'other'

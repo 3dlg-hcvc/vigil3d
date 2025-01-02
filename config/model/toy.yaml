@@ -1,0 +1,57 @@
+model:
+  _target_: Toy
+  dim: 100
+
+train:
+  data:
+    split:
+      train: train
+      val: val
+    dataset:
+      train:
+        name: Toy
+        params:
+          dim: 100
+          length: 10000
+      val:
+        name: Toy
+        params:
+          dim: 100
+          length: 1000
+    dataloader:
+      train:
+        num_workers: 0
+        batch_size: 8
+        shuffle: True
+        pin_memory: True
+        drop_last: False
+        collate_fn: null
+        sampler: null
+      val:
+        num_workers: 0
+        batch_size: 4
+        shuffle: False
+        pin_memory: True
+        drop_last: False
+        collate_fn: null
+        sampler: null
+  module:
+    name: Toy
+    loss:
+      name: torch.nn.CrossEntropyLoss
+      params: {}
+    lr: 1e-4
+  trainer:
+    accelerator: "auto"
+    enable_checkpointing: True
+    logger: ${env.logger}
+    max_epochs: 200
+  load_from_checkpoint: False
+
+checkpoint:
+  type: local_weights
+  value: .data/models/toy/toy.pth.tar
+  key:
+    - state_dict
+  strict: True
+

@@ -1,0 +1,21 @@
+dataset_name: ViGiL3D
+source: .data/datasets/vigil3d/scannet
+metadata: metadata.json
+dataset_type: visual_grounding
+preprocess:
+  process_class: ScanNet
+  raw_data_root: /datasets/released/scannet/public/v2/scans
+  raw_annotations: data/vigil3d_scannet.csv
+  mesh_file_format: "{scene_id}_vh_clean_2.ply"
+  annotation_file_format: "{scene_id}_vh_clean.aggregation.json"
+  segmentation_file_format: "{scene_id}_vh_clean_2.0.010000.segs.json"
+  split_path: "/localhome/atw7/projects/3d-ovfgvg/data/scanrefer/ScanRefer_filtered_{split}_scene_ids.json"
+  input_splits:
+    - train
+    - val
+  split: test
+  skip_existing: False
+  num_workers: 0
+  image_size: [320, 240]  # width x height
+  frame_skip: 20
+

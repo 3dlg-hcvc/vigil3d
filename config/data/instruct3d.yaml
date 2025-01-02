@@ -1,0 +1,4 @@
+dataset_name: Instruct3D
+source: .data/datasets/instruct3d
+metadata: metadata.json
+dataset_type: visual_grounding

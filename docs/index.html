@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="ViGiL3D: A Linguistically Diverse Dataset for 3D Visual Grounding">
+  <meta name="keywords" content="ViGiL3D, 3D, 3DVG, visual grounding, language, dataset, evaluation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>ViGiL3D: A Linguistically Diverse Dataset for 3D Visual Grounding</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVDFJ40CY5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FVDFJ40CY5');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              ViGiL3D: A Linguistically Diverse Dataset <br> for 3D Visual Grounding
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://atwang16.github.io/">Austin T. Wang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://zmgong.github.io/">ZeMing Gong</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://angelxuanchang.github.io/">Angel X. Chang</a><sup>1,2</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Simon Fraser University,</span>
+              <span class="author-block"><sup>2</sup>Alberta Machine Intelligence Institute (Amii)</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block" style="color:#a771ac">Preprint</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="https://arxiv.org" class="external-link button is-normal is-rounded is-dark">  <!-- replace with real link -->
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/3dlg-hcvc/vigil3d" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                <a href="https://github.com/3dlg-hcvc/vigil3d/tree/main/data" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered">
+
+        <!-- Abstract. --> 
+        <div class="column is-full-width is-large">
+          <div class="column has-text-centered">
+
+            <div class="center-container" style="margin-left: -10px">
+              <!-- <h2 class="title is-3">Abstract</h2> -->
+              <img src="./static/images/teaser.png" style="width: 80%;">
+            </div>
+
+            <div class="content has-text-justified mt-4">
+              <p>
+                3D visual grounding (3DVG) involves localizing entities in a 3D scene referred to by natural language text. Such models are useful for embodied AI and scene retrieval applications, which involve searching for objects or patterns using natural language descriptions. While recent works have focused on LLM-based scaling of 3DVG datasets, these datasets do not capture the full range of potential prompts which could be specified in the English language. To ensure that we are scaling up and testing against a useful and representative set of prompts, we propose a framework for linguistically analyzing 3DVG prompts and introduce Visual Grounding with Diverse Language in 3D (ViGiL3D), a diagnostic dataset for evaluating visual grounding methods against a diverse set of language patterns. We evaluate existing open-vocabulary 3DVG methods to demonstrate that these methods are not yet proficient in understanding and identifying the targets of more challenging, out-of-distribution prompts, toward real-world applications.
+              </p>
+            </div>
+
+          </div>
+        </div>
+        <!--/ Abstract. -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <!-- Analysis. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <div class="center-container">
+              <h3 class="title is-3">Analysis</h3>
+            </div>
+            <div class="center-container">
+              <img src="./static/images/analysis_pipeline.png" style="width: 90%;">
+            </div>
+            <p>
+              While recent efforts have attempted to scale up visual grounding datasets, many of these datasets are insufficiently diverse in capturing the range of linguistic patterns. We analyze the prompts of prior 3DVG datasets according to 6 count-based and 24 binary metrics characterizing the targets, anchors, attributes, relationships, and other language patterns. We propose an automated pipeline based on LLMs and other NLP tools to analyze each prompt and run our pipeline against 1000 sampled prompts from each dataset to identify some key linguistic patterns which are absent in most existing datasets.
+            </p>
+            <div class="center-container" style="margin-left: -10px">
+              <img src="./static/images/radar_graph.png">
+            </div>
+          </div>
+        </div> 
+      </div>  
+    </div> 
+    <!--/ Analysis. -->
+  </section>
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <!-- Dataset Construction. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <div class="center-container">
+              <h3 class="title is-3">Dataset</h3>
+            </div>
+            <p>
+              We release ViGiL3D, a human-annotated dataset of 350 prompts from 26 ScanNet and ScanNet++ scenes with diverse linguistic patterns for benchmarking 3DVG methods. Each prompt describes zero, one, or multiple target objects in each scene with a variety of language criteria, including anchor object references, a range of attribute and relationship types such as text labels and arranagements, coreferences, and negation. We show a series of example prompts from ViGiL3D below with a few of the many represented patterns.
+            </p>
+            <div class="center-container">
+              <img src="./static/images/dataset_statistics.png" style="width: 50%;" alt="dataset statistics">
+              <img src="./static/images/examples.png">
+            </div>
+          </div>
+        </div> 
+      </div>  
+    </div> 
+    <!--/ Dataset Construction. -->
+  </section>
+
+  <section class="section">
+    <!-- Results. -->
+    <div class="container is-max-widescreen">
+      <div class="center-container">
+        <h3 class="title is-3">Results</h3>
+        <div class="content has-text-justified">
+          <p>
+            Evaluating accuracy against both ground truth and Mask3D-predicted boxes, we find that all methods perform significantly worse on ViGiL3D relative to the performance on ScanRefer, demonstrating that our prompts are overall more challenging than prior benchmarks. Furthermore, our dataset allows for more fine-grained analysis of 3DVG methods on different linguistic patterns, identifying a need for further improvement of performance on patterns such as text labels, generic references, and negations.
+          </p>
+        </div>
+        <img src="./static/images/subgroup_radar_graph.png">
+        <img src="./static/images/examples_supp_scannet.png">
+      </div>
+    </div>
+    <!--/ Results. -->
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-widescreen content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+      @article{gong2024clibd,
+          author={Wang, Austin T. and Gong, ZeMing and Chang, Angel X.},
+          title={{ViGiL3D}: A Linguistically Diverse Dataset for 3D Visual Grounding},
+          journal={arXiv preprint},
+          year={2024},
+          eprint={2405.17537},  <!-- UPDATE ME -->
+          archivePrefix={arXiv},
+          primaryClass={cs.AI},
+          doi={10.48550/arxiv.2405.17537},  <!-- UPDATE ME -->
+      }
+      </code></pre>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-widescreen content">
+      <h2 class="title">Acknowledgements</h2>
+      <p>
+        This work was funded in part by a CIFAR AI Chair and the NSERC Discovery Grant. We thank Yiming Zhang, Hou In Ivan Tam, Hou In Derek Pun, Xingguang Yan, and Karen Yeh for helpful discussions and feedback.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+              The template is borrowed from <a href="https://nerfies.github.io/">Nerfies</a>.
+              Please check out their great work if you find it helpful as well.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

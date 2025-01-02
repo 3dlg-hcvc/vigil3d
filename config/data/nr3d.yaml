@@ -1,0 +1,4 @@
+dataset_name: Nr3D
+source: .data/datasets/nr3d
+metadata: metadata.json
+dataset_type: visual_grounding

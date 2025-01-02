@@ -1,0 +1,25 @@
+hydra:
+  run:
+    dir: ${env.save_dir}/hydra
+
+name: ???  # name of experiment run
+ckpt: null  # path to checkpoint to resume training from
+
+env:
+  save_dir: .results/${name}/${now:%Y-%m-%d_%H-%M-%S}
+  seed: 1463
+  precision: "medium"
+  logger:
+    _target_: lightning.pytorch.loggers.NeptuneLogger
+    name: ${name}
+    with_id: null
+    project: "3dlg-hcvc-atwang/3d-ovfgvg-train"
+    dependencies: pyproject.toml
+    source_files:
+      - "ovfgvg/**/*.py"
+      - "config/**/*.yaml"
+
+defaults:
+  - _self_
+  - data: scanrefer
+  - model: openscene

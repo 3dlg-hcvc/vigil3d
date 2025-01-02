@@ -1,0 +1,20 @@
+dataset_name: ViGiL3D
+source: .data/datasets/vigil3d/scannetpp
+metadata: metadata.json
+dataset_type: visual_grounding
+preprocess:
+  process_class: ScanNetPP
+  raw_data_root: /datasets/external/scannetpp/scannetpp/data
+  raw_annotations: data/vigil3d_scannetpp.csv
+  mesh_file_format: scans/mesh_aligned_0.05.ply
+  annotation_file_format: scans/segments_anno.json
+  segmentation_file_format: scans/segments.json
+  split_path: "/datasets/external/scannetpp/scannetpp/splits/nvs_sem_{split}.txt"
+  input_splits:
+    - train
+    - val
+  split: test
+  skip_existing: False
+  num_workers: 8
+  image_size: [320, 240]  # width x height
+  frame_skip: 20

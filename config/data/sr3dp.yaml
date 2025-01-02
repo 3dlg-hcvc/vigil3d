@@ -1,0 +1,4 @@
+dataset_name: Sr3D+
+source: .data/datasets/sr3d+
+metadata: metadata.json
+dataset_type: visual_grounding

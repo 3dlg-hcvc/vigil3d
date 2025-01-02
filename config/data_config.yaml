@@ -1,0 +1,17 @@
+name: ???  # name of data preprocessing run
+
+env:
+  save_dir: .results/${name}
+  seed: 1463
+  logger:
+    _target_: lightning.pytorch.loggers.NeptuneLogger
+    name: ${name}
+    project: "3dlg-hcvc-atwang/3d-ovfgvg-datasets"
+    dependencies: pyproject.toml
+    source_files:
+      - "ovfgvg/**/*.py"
+      - "config/**/*.yaml"
+
+defaults:
+  - _self_
+  - data: scanrefer

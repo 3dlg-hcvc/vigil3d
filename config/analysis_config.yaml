@@ -1,0 +1,90 @@
+name: ???  # name of data analysis run
+
+env:
+  save_dir: .results/${name}
+  seed: 1463
+  logger:
+    _target_: lightning.pytorch.loggers.NeptuneLogger
+    name: ${name}
+    project: "3dlg-hcvc-atwang/3d-ovfgvg-datasets"
+    dependencies: pyproject.toml
+    source_files:
+      - "ovfgvg/**/*.py"
+      - "config/**/*.yaml"
+
+split: ???
+parser_model: gpt-4o
+num_prompts: null
+shuffle: false
+output_name: analysis.json
+skip_existing: true
+use_existing_only: true
+latex_columns:
+  - m_ave_attributes_total
+  - m_ave_attributes_target
+  - m_ave_attributes_anchors
+  - m_percent_attribute_type.color
+  - m_percent_attribute_type.size
+  - m_percent_attribute_type.shape
+  - m_percent_attribute_type.number
+  - m_percent_attribute_type.material
+  - m_percent_attribute_type.texture
+  - m_percent_attribute_type.function
+  - m_percent_attribute_type.style
+  - m_percent_attribute_type.text_label
+  - m_percent_attribute_type.state
+# - m_ave_relationships_total
+# - m_ave_relationships_target
+# - m_ave_relationships_anchors
+# - m_percent_relationship_type.near
+# - m_percent_relationship_type.far
+# - m_percent_relationship_type.viewpoint_dependent
+# - m_percent_relationship_type.vertical
+# - m_percent_relationship_type.contain
+# - m_percent_relationship_type.arrangement
+# - m_percent_relationship_type.ordinal
+# - m_percent_relationship_type.comparison
+# - m_percent_target_ref_generic
+# - m_percent_target_ref_categorical
+# - m_percent_target_ref_fine_grained
+# - m_percent_target_not_first_np
+# - m_percent_coreferences
+# - m_percent_anchor_type_single
+# - m_percent_anchor_type_multiple
+# - m_percent_anchor_type_non_object
+# - m_percent_anchor_type_viewpoint
+# - m_percent_negation
+# - m_percent_unique_bigrams_sem
+
+  # - m_ave_attributes_total
+  # - m_ave_attributes_target
+  # - m_ave_attributes_anchors
+  # - m_percent_attribute_type.color
+  # - m_percent_attribute_type.
+  # - m_percent_attribute_type.
+  # - m_percent_attribute_type.
+  # - m_percent_attribute_type.
+  # - m_percent_attribute_type.
+  # - m_percent_attribute_type.
+  # - m_percent_attribute_type.number
+  # - m_percent_attribute_type.text_label
+  # - m_percent_attribute_type.state
+  # - m_ave_relationships_total
+  # - m_ave_relationships_target
+  # - m_ave_relationships_anchors
+  # - m_percent_relationship_type.far
+  # - m_percent_relationship_type.arrangement
+  # - m_percent_relationship_type.ordinal
+  # - m_percent_relationship_type.comparison
+  # - m_percent_target_ref_generic
+  # - m_percent_target_ref_categorical
+  # - m_percent_target_not_first_np
+  # - m_percent_anchor_type_multiple
+  # - m_percent_anchor_type_non_object
+  # - m_percent_anchor_type_viewpoint
+  # - m_percent_negation
+  # - m_percent_unique_bigrams_sem
+
+defaults:
+  - _self_
+  - data: ovfgvg_scannet

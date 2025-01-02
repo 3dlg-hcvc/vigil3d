@@ -1,0 +1,4 @@
+dataset_name: Analysis
+source: .data/datasets/analysis
+metadata: metadata.json
+dataset_type: visual_grounding

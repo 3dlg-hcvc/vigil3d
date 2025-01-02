@@ -1,0 +1,4 @@
+dataset_name: SceneVerse
+source: .data/datasets/sceneverse
+metadata: metadata.json
+dataset_type: visual_grounding

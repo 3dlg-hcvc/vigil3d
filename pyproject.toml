@@ -1,0 +1,45 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel",
+    "black>=23.12.1",
+    "isort>=5.13.2"
+]
+
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["ovfgvg"]
+
+[project]
+name = "ovfgvg"
+version = "0.0.1"
+authors = [
+  { name="Austin Wang", email="atw7@sfu.ca" },
+]
+description = "3D-OVFGVG: Internal scripts for open-vocabulary, fine-grained visual grounding"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+
+[project.scripts]
+analyze = "ovfgvg.scripts.analyze:main"
+train = "ovfgvg.scripts.train:main"
+evaluate = "ovfgvg.scripts.evaluate:main"
+infer = "ovfgvg.scripts.infer:main"
+preprocess = "ovfgvg.scripts.preprocess_data:main"
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+
+[tool.isort]
+line_length = 120
+profile = "black"
