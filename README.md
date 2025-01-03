@@ -1,6 +1,6 @@
 # ViGiL3D: A Linguistically Diverse Dataset for 3D Visual Grounding
 
-[![Paper (coming soon)](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=b31b1b)](https://arxiv.org)
+[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=b31b1b)](https://arxiv.org/abs/2501.01366)
 [![Project Page](https://img.shields.io/badge/Project-Website-5B7493?logo=googlechrome&logoColor=5B7493)](https://3dlg-hcvc.github.io/vigil3d)
 
 [Austin T. Wang](https://atwang16.github.io)<sup>1</sup>, [ZeMing Gong](https://zmgong.github.io/)<sup>1</sup>, [Angel X. Chang](https://angelxuanchang.github.io/)<sup>1, 2</sup>
@@ -194,5 +194,14 @@ Credit for some of the implementations in this repository come from the followin
 
 If you use the ViGiL3D data or code, please cite:
 ```
-TBD
+@article{wang2024vigil3d,
+  author={Wang, Austin T. and Gong, ZeMing and Chang, Angel X.},
+  title={{ViGiL3D}: A Linguistically Diverse Dataset for 3D Visual Grounding},
+  journal={arXiv preprint},
+  year={2024},
+  eprint={2501.01366},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  doi={10.48550/arxiv.2501.01366},
+}
 ```
