@@ -1,7 +1,5 @@
 # ViGiL3D Dataset
 
-![ViGiL3D Dataset Statistics](../docs/static/images/dataset_statistics.png)
-
 ![ViGiL3D Dataset Examples](../docs/static/images/examples.png)
 
 Please find the text descriptions and metadata for each visual grounding prompt here. The scene data can be found at
