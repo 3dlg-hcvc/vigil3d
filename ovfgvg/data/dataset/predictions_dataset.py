@@ -29,18 +29,12 @@ The prediction file must be of the form
 """
 
 import json
-import os
-import random
-from enum import Enum, auto
 from typing import Any, Optional
 
-import numpy as np
-import pandas as pd
 import torch
-import SharedArray as SA
 
-from ovfgvg.utils import zip_dicts, rescale, TARGET_TOKEN, NO_OBJ_TOKEN, split_sentence
-from ovfgvg.data.types import SceneCollection, Scene
+from ovfgvg.utils import zip_dicts
+from ovfgvg.data.types import SceneCollection
 
 
 def predictions_collate_fn(batch: list[dict[str, Any]]):

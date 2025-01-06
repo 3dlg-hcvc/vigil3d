@@ -36,7 +36,6 @@ def visualize_labels(
     :param loc: location for legend in matplotlib figure, defaults to "lower left"
     :param ncol: number of columns in legend, defaults to 7
     """
-    # TODO: find a proper place for this
     patches = []
     for i, index in enumerate(u_index):
         label = labels[index]

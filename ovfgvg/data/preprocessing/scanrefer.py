@@ -7,21 +7,16 @@ from typing import Any
 
 import numpy as np
 import plyfile
-import torch
-from omegaconf import DictConfig
 
 from .base import DatasetPreprocessing
 from ovfgvg.data.utils import SensorData
-from ovfgvg.data.types import Scene, SceneCollection, OrientedBBox, DescriptionPair, ImageView, Entity
+from ovfgvg.data.types import Scene, DescriptionPair, ImageView, Entity
 
-# from ovfgvg.data.modules.text import TextDataModule
-from ovfgvg.modules import get_lightning_module
-from ovfgvg.models import get_model
-from ovfgvg.utils import AbstractProcessWorker, predict, HierarchicalPath
+from ovfgvg.utils import AbstractProcessWorker, HierarchicalPath
 
 
 class ProcessMesh(AbstractProcessWorker):
-    """_summary_
+    """Worker for processing a single scene.
 
     Code credit for a significant portion of this class goes to the original authors of the ScanRefer paper.
     """

@@ -2,7 +2,6 @@ import json
 import logging
 import os
 from typing import Optional
-from collections import defaultdict
 
 from openai import OpenAI
 

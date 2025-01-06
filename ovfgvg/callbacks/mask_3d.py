@@ -95,35 +95,6 @@ class PredVisualizationCallback(L.Callback):
         batch_idx: int,
         dataloader_idx: int = 0,
     ):
-        # if batch_idx % self.sampling_rate != 0:
-        #     return
-
-        # pcl = outputs["pcl"]
-        # logits_pred = outputs["logits_pred"]
-
-        # if trainer.datamodule.mapper is not None:
-        #     pred_label_color = convert_labels_with_palette(
-        #         trainer.datamodule.mapper[logits_pred].numpy(), trainer.datamodule.palette
-        #     )
-        #     export_pointcloud(
-        #         os.path.join(self.log_dir, "{}_{}.ply".format(batch_idx, pl_module.feature_type)),
-        #         pcl,
-        #         colors=pred_label_color,
-        #     )
-        # else:
-        #     pred_label_color = convert_labels_with_palette(logits_pred.numpy(), trainer.datamodule.palette)
-        #     export_pointcloud(
-        #         os.path.join(self.log_dir, "{}_{}.ply".format(batch_idx, pl_module.feature_type)),
-        #         pcl,
-        #         colors=pred_label_color,
-        #     )
-        #     visualize_labels(
-        #         list(np.unique(logits_pred.numpy())),
-        #         trainer.datamodule.labelset,
-        #         trainer.datamodule.palette,
-        #         os.path.join(self.log_dir, "{}_labels_{}.jpg".format(batch_idx, pl_module.feature_type)),
-        #         ncol=5,
-        #     )
         return self._generate_visualization(batch, outputs, batch_idx)
 
     def _generate_visualization(self, batch, outputs: dict[str, Any], batch_idx: int):
