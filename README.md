@@ -146,6 +146,8 @@ analyze name=analyze-${DATASET} data=${DATASET} split=test num_prompts=1000
 
 ### Evaluation
 
+\[August 8, 2025\] For an easier and more direct way to evaluate your model on ViGiL3D, refer to [EVALUATION.md] for further documentation.
+
 To evaluate a given model, you will need to generate predictions in the following form:
 
 ```json
